@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'app-counter',
+  templateUrl: './counter.component.html',
+  styleUrl: './counter.component.scss',
 })
-export class AppComponent {
+export class CounterComponent {
   public title: string = 'Bases';
   public counter: number = 100;
 

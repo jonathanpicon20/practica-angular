@@ -1,0 +1,40 @@
+<h3>Listado de Heroes</h3>
+<div *ngIf="deleteHero ; else nothingWasDeleted ">
+  <h3>Heroe Borrado <small class="text-danger">{{deleteHero}}</small></h3>
+</div>
+
+<ng-template #nothingWasDeleted>
+  <h3>
+    No se a borrado nada.
+  </h3>
+</ng-template>
+
+<button
+  *ngIf="heroName.length > 0"
+  (click)="removeLastHero()"
+  class="btn btn-outline-danger"
+>
+  BORRAR ULTIMO HEROE
+</button>
+
+<button
+  *ngIf="heroName.length === 0"
+  (click)="removeLastHero()"
+  class="btn btn-outline-primary"
+>
+  AGREGAR HEROE
+</button>
+
+<ul class="mt-2 list list-group">
+  <li *ngFor="let name of heroName" class="list-group-item">{{name}}</li>
+</ul>
+
+<div *ngIf="heroName.length === 0" class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Nombre de su Heroe" />
+  <input
+    type="text"
+    class="form-control mx-2"
+    placeholder="Edad del Heroe"
+    aria-label="Edad"
+  />
+</div>
