@@ -7,15 +7,15 @@ import { Component } from '@angular/core';
 })
 export class CounterComponent {
   public title: string = 'Bases';
-  public counter: number = 100;
+  public counter: number = 0;
 
   increaseBy(value: number): void {
-    this.counter = ++this.counter;
+    this.counter = this.counter + 10;
   }
   decreaseBy(value: number): void {
-    this.counter -= 1;
+    this.counter = this.counter - 10;
   }
   clearBy(): void {
-    this.counter = 100;
+    this.counter = 0;
   }
 }
